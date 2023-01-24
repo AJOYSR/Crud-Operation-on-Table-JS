@@ -1,6 +1,23 @@
 var productArray = [];
 
+var n = 1;
+var x = 0;
+function isUniqueProductID(current_id) {
+    for (let i = 0; i < productArray.length; i++) {
+        if (productArray[i].p_id === current_id) {
+            return false;
+        }
+    }
+    return true;
+}
 
+function isValidProductName(pname) {
+    return Boolean(pname.length <= 60);
+}
+
+function isValidProductPrice(pprice) {
+    return Boolean(pprice >= 0 && pprice <= 100000);
+}
 
 function formPrint() {
 

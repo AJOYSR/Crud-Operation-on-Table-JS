@@ -29,6 +29,43 @@ function isValidProductPrice(pprice) {
     return Boolean(pprice >= 0 && pprice <= 100000);
 }
 
+function deleteModal(td) {
+    if (confirm('Do you want to delete this record?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById('table').deleteRow(row.rowIndex);
+        resetForm();
+    }
+}
+function updateRecord(formData) {
+    selectedRow.cells[0].innerHTML = formData.p_id;
+    selectedRow.cells[1].innerHTML = formData.p_name;
+    selectedRow.cells[2].innerHTML = formData.p_price;
+}
+function resetForm() {
+    document.getElementById("p_id").value = '';
+    document.getElementById("p_name").value = '';
+    document.getElementById("p_price").value = '';
+    selectedRow = null;
+}
+
+function editRecord(td) {
+    selectedRow = td.parentElement.parentElement;
+    a = document.getElementById("p_id").value = selectedRow.cells[0].innerHTML;
+    b = document.getElementById("p_name").value = selectedRow.cells[1].innerHTML;
+    c = document.getElementById("p_price").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("p_id").disabled = true;
+    // console.log(document.getElementsByTagName("button"));
+    document.getElementsByTagName("button")[0].classList.add("show-not");
+    document.getElementsByTagName("button")[1].classList.remove("show");
+    // .innerHTML=Edit;
+    data = {
+        p_id: a,
+        p_name: b,
+        p_price: c
+    }
+    updateRecord(data);
+}
+
 function formPrint() {
 
     var ourTable = document.getElementById("table");

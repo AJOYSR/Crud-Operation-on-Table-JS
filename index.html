@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div>
-            <form >
+            <form autocomplete="off" onsubmit="onFormSubmit()">
                 <fieldset>
                     <div class="input-box">
                         <input type="text" name="p_id" id="p_id" placeholder="Enter ID..." class="p" />
@@ -26,12 +26,8 @@
                         <input type="number" name="p_price" id="p_price" placeholder="Enter Product Price.." />
                     </div>
                     <p id="errorprice"></p>
-                    <button type="button" class="button" name="button" onclick="formPrint()">
-                        Submit
-                    </button>
-                    <button type="button" class="button show" name="button" onclick="updateRecord()">
-                        Update
-                    </button>
+                    <input type="submit" class="button" name="button1" value="Add"> </input>
+                    <input type="submit" class="button show" value="Save" name="button2"> </input>
                 </fieldset>
             </form>
         </div>

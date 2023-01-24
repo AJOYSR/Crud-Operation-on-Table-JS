@@ -10,7 +10,17 @@ function isUniqueProductID(current_id) {
     }
     return true;
 }
-
+function getInputData() {
+    let pid = document.getElementById("p_id").value;
+    let pname = document.getElementById("p_name").value;
+    let pprice = document.getElementById("p_price").value;
+    let Data = {
+        p_id: pid,
+        p_name: pname,
+        p_price: pprice,
+    };
+    return Data;
+}
 function isValidProductName(pname) {
     return Boolean(pname.length <= 60);
 }

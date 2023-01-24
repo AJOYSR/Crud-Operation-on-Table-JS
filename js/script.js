@@ -1,4 +1,19 @@
 var productArray = [];
+var selectedRow = null
+function onFormSubmit(e) {
+    event.preventDefault();
+    var formData = getInputData();
+    console.log('here');
+    // let x = document.getElementsByName('button1');
+    if (selectedRow === null) {
+        insertNewRecord(formData);
+    }
+    else {
+        updateRecord(formData);
+    }
+    resetForm();
+}
+
 
 var n = 1;
 var x = 0;
@@ -10,17 +25,15 @@ function isUniqueProductID(current_id) {
     }
     return true;
 }
+
 function getInputData() {
-    let pid = document.getElementById("p_id").value;
-    let pname = document.getElementById("p_name").value;
-    let pprice = document.getElementById("p_price").value;
-    let Data = {
-        p_id: pid,
-        p_name: pname,
-        p_price: pprice,
-    };
-    return Data;
+    var formData = {};
+    formData["p_id"] = document.getElementById("p_id").value;
+    formData["p_name"] = document.getElementById("p_name").value;
+    formData["p_price"] = document.getElementById("p_price").value;
+    return formData;
 }
+
 function isValidProductName(pname) {
     return Boolean(pname.length <= 60);
 }
@@ -54,23 +67,15 @@ function editRecord(td) {
     b = document.getElementById("p_name").value = selectedRow.cells[1].innerHTML;
     c = document.getElementById("p_price").value = selectedRow.cells[2].innerHTML;
     document.getElementById("p_id").disabled = true;
-    // console.log(document.getElementsByTagName("button"));
-    document.getElementsByTagName("button")[0].classList.add("show-not");
-    document.getElementsByTagName("button")[1].classList.remove("show");
-    // .innerHTML=Edit;
-    data = {
-        p_id: a,
-        p_name: b,
-        p_price: c
-    }
-    updateRecord(data);
+    document.getElementsByClassName("button")[0].classList.add("show-not");
+    document.getElementsByClassName("button")[1].classList.remove("show");
+    // resetForm();
 }
 
-function formPrint() {
-
+function insertNewRecord(data) {
+    console.log("here has come");
     var ourTable = document.getElementById("table");
     var newRowToTheTable = ourTable.insertRow(1);
-    let data = getInputData();
 
     if (data.p_name === "" || data.p_id === "" || data.p_price === "") {
         alert("Any input should not be empty !!!");
@@ -98,6 +103,7 @@ function formPrint() {
         let error = document.getElementById("errorid");
         error.textContent = "Please enter a Unique ID!!";
         error.style.color = "red"
+        resetForm();
         return;
     }
 

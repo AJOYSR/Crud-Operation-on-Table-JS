@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Product Management</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <form >
+                <fieldset>
+                    <div class="input-box">
+                        <input type="text" name="p_id" id="p_id" placeholder="Enter ID..." class="p" />
+                    </div>
+                    <p id="errorid"></p>
+                    <div class="input-box">
+                        <input type="text" name="p_name" id="p_name" placeholder="Enter Product Name..." />
+                    </div>
+                    <p id="errorname"></p>
+                    <div class="input-box">
+                        <input type="number" name="p_price" id="p_price" placeholder="Enter Product Price.." />
+                    </div>
+                    <p id="errorprice"></p>
+                    <button type="button" class="button" name="button" onclick="formPrint()">
+                        Submit
+                    </button>
+                    <button type="button" class="button show" name="button" onclick="updateRecord()">
+                        Update
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+
+        <table id="table" class="styled-table">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active-row">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto Slab';
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+div#contact_form {
+    width: 800px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+div.input-box {
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+p {
+    display: block;
+}
+
+div.input-box input {
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    flex: 1;
+}
+
+div.error-input {
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+div.error-input input {
+    font-size: 1.5rem;
+    border: 4px solid rgb(245, 30, 30);
+    
+    padding: 4px 8px;
+    flex: 1;
+}
+
+input.button {
+    font-size: 1.5rem;
+    /* background: #009879; */
+    color: white;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 4px 40px;
+}
+
+.button {
+    font-size: 1.5rem;
+    background: #009879;
+    color: white;
+    border: 1px solid grey;
+    margin: 10px;
+    padding: 4px 40px;
+}
+.show-not{
+    display: none;
+}
+
+.show {
+    display: none;
+}
+
+.red-button {
+    font-size: 1.5rem;
+    background: #e01436;
+    color: white;
+    border: 1px solid grey;
+    cursor: pointer;
+    margin: 10px;
+    padding: 4px 40px;
+}
+.edit-button {
+    font-size: 1.5rem;
+    background: #d2ff0c;
+    color: white;
+    border: 1px solid grey;
+    cursor: pointer;
+    margin: 10px;
+    padding: 4px 40px;
+}
+
+h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-family: 'Passion One';
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 0.8;
+}
+
+div.greetings {
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #d3d3d3;
+    background-image: linear-gradient(15deg, transparent 28%, rgba(255, 255, 255, 0.5) 28%);
+    background-size: 50px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
